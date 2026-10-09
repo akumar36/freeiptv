@@ -8,6 +8,18 @@
 https://raw.githubusercontent.com/akumar36/freeiptv/main/india.m3u
 ```
 
+> Use the **raw** URL above. The normal GitHub page link (`github.com/.../blob/main/india.m3u`) is a web page, not a playlist, and players will report 0 channels.
+
+## TV guide (EPG)
+
+The playlist header points to a free JioTV-based guide that updates daily:
+
+```
+https://mitthu786.github.io/tvepg/jiotv/epg.xml.gz
+```
+
+Most players (TiviMate, Kodi, OTT Navigator) load it automatically from the playlist. If yours doesn't, add that URL as the EPG source. 431 of the 661 Indian channels are mapped to it. International channels have no guide.
+
 ## How to use
 
 - **VLC:** Media → Open Network Stream → paste the URL.
@@ -20,7 +32,7 @@ https://raw.githubusercontent.com/akumar36/freeiptv/main/india.m3u
 - **Indian channels:** `India | <Language> - <Category>`, e.g. `India | Hindi - News` or `India | Tamil - Movies`.
 - **International channels (English):** `International | <Category>`, e.g. `International | News` or `International | Kids`.
 
-Each channel name shows its resolution. Channels that don't broadcast 24/7 are marked `[Not 24/7]`. Logos and `tvg-id`s are included for EPG matching.
+Each channel name shows its resolution. Channels that don't broadcast 24/7 are marked `[Not 24/7]`. Logos are included.
 
 | India | Channels | International | Channels |
 |---|---|---|---|
