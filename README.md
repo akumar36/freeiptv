@@ -29,7 +29,7 @@ Most players (TiviMate, Kodi, OTT Navigator) load it automatically from the play
 
 ## Groups
 
-- **Indian channels:** `India | <Language> - <Category>`, e.g. `India | Hindi - News` or `India | Tamil - Movies`.
+- **Indian channels:** `<Language> - <Category>`, e.g. `Hindi - News` or `Tamil - Movies`.
 - **International channels (English):** `International | <Category>`, e.g. `International | News` or `International | Kids`.
 
 Each channel name shows its resolution. Channels that don't broadcast 24/7 are marked `[Not 24/7]`. Logos are included.
