@@ -4,6 +4,8 @@
 
 ## Playlist URL
 
+Copy-link page: **https://akumar36.github.io/freeiptv/**
+
 ```
 https://raw.githubusercontent.com/akumar36/freeiptv/main/india.m3u
 ```
