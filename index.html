@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free IPTV India</title>
+<title>IPTV Channels</title>
 <meta name="description" content="1,100+ free TV channels tested in India. Copy the M3U link and paste it into your IPTV player.">
-<meta property="og:title" content="Free IPTV India – M3U Playlist">
+<meta property="og:title" content="IPTV Channels – M3U Playlist">
 <meta property="og:description" content="1,100+ free TV channels tested in India. Tap to copy the playlist link.">
 <meta property="og:type" content="website">
 <style>
@@ -48,6 +48,11 @@
   h2 { font-size: 1rem; margin: 24px 0 8px; }
   ol { margin: 0; padding-left: 20px; color: var(--muted); }
   li { margin-bottom: 4px; }
+  .insta {
+    display: block; text-align: center; margin-top: 16px; padding: 12px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none;
+  }
+  .insta strong { color: var(--accent); }
   footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 16px; }
   footer a { color: inherit; }
 </style>
@@ -55,7 +60,7 @@
 <body>
 <main>
   <div class="card">
-    <h1>📺 Free IPTV India</h1>
+    <h1>📺 IPTV Channels</h1>
     <p class="sub">1,100+ free channels in Hindi, Tamil, Telugu, Malayalam, Bengali, English and more, all tested in India.</p>
 
     <label for="link">Playlist link (M3U)</label>
@@ -66,10 +71,12 @@
     <h2>How to use</h2>
     <ol>
       <li>Tap <strong>Copy link</strong>.</li>
-      <li>Open an IPTV app, e.g. TiviMate, OTT Navigator, IPTV Smarters, VLC or Kodi.</li>
-      <li>Choose <strong>Add playlist → M3U URL</strong> and paste the link.</li>
+      <li>Install and open the <strong>APTV</strong> app (App Store / Play Store).</li>
+      <li>Tap <strong>Add Playlist</strong> (+), paste the link in the URL field and save.</li>
+      <li>Wait for the channels to load, then start watching.</li>
     </ol>
   </div>
+  <a class="insta" href="https://www.instagram.com/seltos.gtx/" target="_blank" rel="noopener">Follow <strong>@seltos.gtx</strong> on Instagram</a>
   <footer>Links from the public <a href="https://github.com/iptv-org/iptv">iptv-org</a> database. No video is hosted here.</footer>
 </main>
 <script>
@@ -97,7 +104,7 @@
     if (ok) {
       btn.textContent = "✓ Copied!";
       btn.classList.add("done");
-      hint.textContent = "Now paste it into your IPTV app.";
+      hint.textContent = "Now paste it into the APTV app.";
       setTimeout(() => { btn.textContent = "Copy link"; btn.classList.remove("done"); }, 2500);
     } else {
       legacyCopy();
