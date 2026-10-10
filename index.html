@@ -44,6 +44,7 @@
   }
   .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
   .logo { width: 56px; height: 56px; flex: none; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 0 0 2.5px var(--accent2), 0 6px 14px rgba(124, 58, 237, .35); }
+  .logo-link { display: block; flex: none; line-height: 0; border-radius: 50%; }
   h1 { font-size: 1.6rem; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
   .tag { font-size: .8rem; font-weight: 600; color: var(--accent1); margin: 2px 0 0; }
   .sub { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
@@ -95,7 +96,7 @@
 <main>
   <div class="card">
     <div class="brand">
-      <img class="logo" src="profile.jpg" width="56" height="56" alt="@seltos.gtx">
+      <a class="logo-link" href="https://www.instagram.com/seltos.gtx/" target="_blank" rel="noopener" aria-label="@seltos.gtx on Instagram"><img class="logo" src="profile.jpg" width="56" height="56" alt="@seltos.gtx"></a>
       <div>
         <h1>IPTV Channels</h1>
         <p class="tag">1,100+ free channels · tested in India</p>
