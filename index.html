@@ -2,81 +2,127 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#7c3aed">
 <title>IPTV Channels</title>
-<meta name="description" content="1,100+ free TV channels tested in India. Copy the M3U link and paste it into your IPTV player.">
+<meta name="description" content="1,100+ free TV channels tested in India. Copy the M3U link and paste it into the APTV app.">
 <meta property="og:title" content="IPTV Channels – M3U Playlist">
 <meta property="og:description" content="1,100+ free TV channels tested in India. Tap to copy the playlist link.">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Crect x='12' y='18' width='40' height='28' rx='6' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M28 26l10 6-10 6z' fill='white'/%3E%3C/svg%3E">
 <style>
   :root {
-    --bg: #f6f7f9; --card: #ffffff; --text: #16181d; --muted: #5d6470;
-    --border: #dfe3e8; --accent: #2563eb; --accent-text: #ffffff; --ok: #15803d;
+    color-scheme: light;
+    --bg1: #7c3aed; --bg2: #db2777; --bg3: #f97316;
+    --card: #ffffff; --text: #1f1235; --muted: #6b5f7d; --border: #ece6f5;
+    --field: #f7f4fc; --accent1: #7c3aed; --accent2: #ec4899; --ok: #16a34a;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0f1115; --card: #181b21; --text: #eceef2; --muted: #9aa1ad;
-      --border: #2b3039; --accent: #3b82f6; --accent-text: #ffffff; --ok: #4ade80;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0f1115; --card: #181b21; --text: #eceef2; --muted: #9aa1ad;
-    --border: #2b3039; --accent: #3b82f6; --accent-text: #ffffff; --ok: #4ade80;
-  }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 24px 16px; background: var(--bg); color: var(--text);
+    margin: 0; min-height: 100vh; min-height: 100dvh;
+    display: flex; align-items: center; justify-content: center;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+    background: linear-gradient(150deg, var(--bg1) 0%, var(--bg2) 60%, var(--bg3) 100%) fixed;
+    background-color: var(--bg1);
+    color: var(--text);
     font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
-  main { width: 100%; max-width: 520px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
-  h1 { font-size: 1.5rem; margin: 0 0 4px; }
-  .sub { color: var(--muted); margin: 0 0 20px; }
-  label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
+  main { width: 100%; max-width: 440px; }
+  .card {
+    background: var(--card); border-radius: 22px; padding: 28px 22px 24px;
+    box-shadow: 0 20px 50px rgba(40, 10, 70, .28);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .logo { width: 56px; height: 56px; flex: none; filter: drop-shadow(0 6px 12px rgba(124, 58, 237, .35)); }
+  h1 { font-size: 1.6rem; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+  .tag { font-size: .8rem; font-weight: 600; color: var(--accent1); margin: 2px 0 0; }
+  .sub { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
+  label { display: block; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 6px; }
   textarea {
-    width: 100%; resize: none; padding: 12px; border: 1px solid var(--border); border-radius: 10px;
-    background: var(--bg); color: var(--text); font: 14px/1.4 ui-monospace, Menlo, Consolas, monospace;
-    word-break: break-all;
+    display: block; width: 100%; resize: none; padding: 12px 14px;
+    border: 1.5px solid var(--border); border-radius: 12px; background: var(--field); color: var(--text);
+    font: 16px/1.4 ui-monospace, Menlo, Consolas, monospace; /* 16px stops iOS zoom on tap */
+    word-break: break-all; overflow-wrap: anywhere;
   }
   button {
-    width: 100%; margin-top: 12px; padding: 14px; border: 0; border-radius: 10px;
-    background: var(--accent); color: var(--accent-text); font-size: 1.05rem; font-weight: 600; cursor: pointer;
+    display: block; width: 100%; margin-top: 12px; padding: 16px; min-height: 54px;
+    border: 0; border-radius: 14px; cursor: pointer;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: #fff;
+    font-size: 1.1rem; font-weight: 700; letter-spacing: .01em;
+    box-shadow: 0 8px 20px rgba(219, 39, 119, .3);
+    transition: transform .08s ease;
   }
-  button.done { background: var(--ok); }
-  .hint { color: var(--muted); font-size: .85rem; margin: 10px 0 0; min-height: 1.3em; }
-  h2 { font-size: 1rem; margin: 24px 0 8px; }
-  ol { margin: 0; padding-left: 20px; color: var(--muted); }
-  li { margin-bottom: 4px; }
+  button:active { transform: scale(.98); }
+  button.done { background: var(--ok); box-shadow: 0 8px 20px rgba(22, 163, 74, .3); }
+  .hint { color: var(--muted); font-size: .88rem; text-align: center; margin: 10px 0 0; min-height: 1.3em; }
+  h2 { font-size: 1rem; margin: 22px 0 10px; }
+  ol { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  li { counter-increment: step; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; color: var(--muted); font-size: .95rem; }
+  li::before {
+    content: counter(step); flex: none; width: 26px; height: 26px; border-radius: 50%;
+    display: grid; place-items: center; font-size: .8rem; font-weight: 700; color: #fff;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  }
+  li strong { color: var(--text); }
   .insta {
-    display: block; text-align: center; margin-top: 16px; padding: 12px; border-radius: 12px;
-    border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 14px; padding: 14px; min-height: 52px; border-radius: 16px;
+    background: rgba(255, 255, 255, .18); border: 1px solid rgba(255, 255, 255, .35);
+    color: #fff; text-decoration: none; font-weight: 600;
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   }
-  .insta strong { color: var(--accent); }
-  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 16px; }
+  .insta svg { width: 22px; height: 22px; flex: none; }
+  footer { text-align: center; color: rgba(255, 255, 255, .8); font-size: .78rem; margin-top: 14px; }
   footer a { color: inherit; }
+  @media (max-width: 360px) {
+    .card { padding: 22px 16px 20px; }
+    h1 { font-size: 1.4rem; }
+    .logo { width: 48px; height: 48px; }
+  }
 </style>
 </head>
 <body>
 <main>
   <div class="card">
-    <h1>📺 IPTV Channels</h1>
-    <p class="sub">1,100+ free channels in Hindi, Tamil, Telugu, Malayalam, Bengali, English and more, all tested in India.</p>
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#ec4899"/>
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="16" fill="url(#lg)"/>
+        <path d="M24 12l8 6 8-6" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="11" y="18" width="42" height="30" rx="7" fill="none" stroke="#fff" stroke-width="4"/>
+        <path d="M28 26.5l10 6.5-10 6.5z" fill="#fff"/>
+        <path d="M22 54h20" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>IPTV Channels</h1>
+        <p class="tag">1,100+ free channels · tested in India</p>
+      </div>
+    </div>
+    <p class="sub">Hindi, Tamil, Telugu, Malayalam, Bengali, English and more: news, movies, sports, kids and music.</p>
 
-    <label for="link">Playlist link (M3U)</label>
+    <label for="link">Playlist link</label>
     <textarea id="link" rows="3" readonly>https://raw.githubusercontent.com/akumar36/freeiptv/refs/heads/main/india.m3u</textarea>
     <button id="copy" type="button">Copy link</button>
     <p class="hint" id="hint" aria-live="polite"></p>
 
     <h2>How to use</h2>
     <ol>
-      <li>Tap <strong>Copy link</strong>.</li>
-      <li>Install and open the <strong>APTV</strong> app (App Store / Play Store).</li>
-      <li>Tap <strong>Add Playlist</strong> (+), paste the link in the URL field and save.</li>
-      <li>Wait for the channels to load, then start watching.</li>
+      <li><span>Tap <strong>Copy link</strong>.</span></li>
+      <li><span>Install and open the <strong>APTV</strong> app (App Store / Play Store).</span></li>
+      <li><span>Tap <strong>Add Playlist</strong> (+), paste the link in the URL field and save.</span></li>
+      <li><span>Wait for the channels to load, then start watching.</span></li>
     </ol>
   </div>
-  <a class="insta" href="https://www.instagram.com/seltos.gtx/" target="_blank" rel="noopener">Follow <strong>@seltos.gtx</strong> on Instagram</a>
+  <a class="insta" href="https://www.instagram.com/seltos.gtx/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    Follow @seltos.gtx on Instagram
+  </a>
   <footer>Links from the public <a href="https://github.com/iptv-org/iptv">iptv-org</a> database. No video is hosted here.</footer>
 </main>
 <script>
