@@ -1,6 +1,6 @@
 # Free IPTV – India
 
-`india.m3u` is a playlist of **1,172 free-to-air channels**. Every stream was tested from an Indian connection (Airtel, Hyderabad) on 2026-10-09. Only streams that loaded **and** decoded with ffprobe were kept, so streams geo-blocked in India are excluded.
+`india.m3u` is a playlist of **1,056 free channels**. Every stream was tested from an Indian connection (Airtel, Hyderabad) on 2026-10-09. Only streams that loaded **and** decoded with ffprobe were kept, so streams geo-blocked in India are excluded.
 
 ## Playlist URL
 
@@ -20,7 +20,7 @@ The playlist header points to a free JioTV-based guide that updates daily:
 https://mitthu786.github.io/tvepg/jiotv/epg.xml.gz
 ```
 
-Most players (TiviMate, Kodi, OTT Navigator) load it automatically from the playlist. If yours doesn't, add that URL as the EPG source. 431 of the 661 Indian channels are mapped to it. International channels have no guide.
+Most players (TiviMate, Kodi, OTT Navigator) load it automatically from the playlist. If yours doesn't, add that URL as the EPG source. 384 of the 589 Indian channels are mapped to it. International channels have no guide.
 
 ## How to use
 
@@ -38,19 +38,20 @@ Each channel name shows its resolution. Channels that don't broadcast 24/7 are m
 
 | India | Channels | International | Channels |
 |---|---|---|---|
-| Hindi | 260 | Music | 90 |
-| Tamil | 68 | News | 71 |
-| Telugu | 58 | Sports | 67 |
-| Bengali | 52 | Series | 61 |
-| Malayalam | 43 | Kids | 51 |
-| English | 38 | Documentary | 36 |
-| Punjabi | 31 | Movies | 36 |
-| Kannada | 26 | Education | 25 |
-| Marathi | 21 | Others | 6 categories |
-| Other languages | 64 | | |
+| Hindi | 231 | Music | 81 |
+| Tamil | 62 | News | 70 |
+| Telugu | 53 | Sports | 62 |
+| Malayalam | 40 | Series | 60 |
+| Bengali | 37 | Kids | 44 |
+| English | 33 | Movies | 30 |
+| Punjabi | 31 | Documentary | 27 |
+| Kannada | 24 | Education | 25 |
+| Marathi | 16 | Others | 7 categories |
+| Other languages | 62 | | |
 
 ## Source and notes
 
 - Stream URLs come from the public [iptv-org](https://github.com/iptv-org/iptv) database. This repo hosts no video, only links.
 - Free streams change often, so some links will stop working over time.
 - Shopping, adult and closed channels are excluded.
+- Paid channels (sold only through cable, DTH or subscription apps) are excluded when the only available streams are unofficial restreams. Channels use the broadcaster's own stream or an official free ad-supported source wherever one exists.
